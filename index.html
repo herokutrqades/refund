@@ -3,35 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Static Page</title>
+    <title>Telegram Connect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            text-align: center;
+            background-color: white;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        h1 {
-            color: #333;
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
         }
-        p {
-            color: #666;
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        input, button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #connectBtn {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Static Page</h1>
-        <p>This is a simple static HTML page.</p>
+        <div class="logo">
+            <img src="/api/placeholder/100/100" alt="Logo">
+        </div>
+        <input type="text" id="username" placeholder="Telegram Username">
+        <input type="number" id="amount" placeholder="Amount" value="0">
+        <button id="connectBtn">Connect</button>
     </div>
+
+    <script>
+        const connectBtn = document.getElementById('connectBtn');
+
+        connectBtn.addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const amount = document.getElementById('amount').value;
+            alert(`Connecting ${username} with amount ${amount}`);
+        });
+    </script>
 </body>
 </html>
